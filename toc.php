@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="keywords" content="web, website, portfolio, html, css" />
-    <title>Disenchantment: Fan Page</title>
+    <title>Disenchantment: Table of Contents</title>
     <link href="styles/brand.css" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css?family=Kalam&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Kaushan+Script&display=swap" rel="stylesheet">
@@ -12,15 +12,15 @@
 
 <body>
     <div id="page-container">
-        <div data-include="includes/brand-header.inc.html"></div>
+        <div data-include="includes/multipage-header.inc.html"></div>
         <main>
-            <h1>The Brand Page</h1>
-            <p>It is a fan page of an adult animated sitcom created by Matt Groening.</p>
-            <h3>Fonts:</h3>
-            <p><span id="kalam">"Kalam".</span> Used on text and headers.</p>
-            <p><span id="kaushan-script">"Kaushan Script".</span> Used on navigation and buttons.</p>
-            <h3>Colors:</h3>
-            <img id="color-scheme" src="images/color-scheme.png" alt="color scheme">
+            <?php
+            $sPage = "home.php";
+            if (isset($_GET["p"])) {
+                $sPage = $_GET["p"];
+            }
+            include("includes/" . $sPage);
+            ?>
         </main>
         <div data-include="includes/footer.inc.html"></div>
         <script src="scripts/HTMLInclude.js"></script>
