@@ -56,7 +56,7 @@ main a
 
 main
 {
-  margin: 0 0 15px 50px;
+  margin: 0 50px 15px 50px;
 }
 
 header, footer 
@@ -120,4 +120,20 @@ footer
   {
     max-width: 100%;
     height: auto;
+  }
+
+  form p
+  {
+    margin-bottom: 0px;
+  }
+
+  fieldset legend
+  {
+    font-family: 'Kaushan Script', cursive;
+    font-weight: bold;
+  }
+
+  .flex-container {
+    display: flex;
+    justify-content: space-around;
   }
