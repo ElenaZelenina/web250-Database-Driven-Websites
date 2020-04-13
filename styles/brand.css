@@ -137,3 +137,30 @@ footer
     display: flex;
     justify-content: space-around;
   }
+
+article p {
+  padding: 0 50px 0 30px;
+}
+
+aside {
+  min-width: fit-content;
+}
+
+aside ul {
+  list-style-type: none;
+  padding: 10px 50px 0 10px;
+}
+
+.textdriven {
+  display: grid;
+  grid-template-columns: 200px auto;
+}
+
+.character {
+  display: flex;
+  justify-content: left;
+}
+
+img {
+  height: fit-content;
+}
