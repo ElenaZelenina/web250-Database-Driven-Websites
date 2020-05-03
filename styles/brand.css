@@ -161,6 +161,6 @@ aside ul {
   justify-content: left;
 }
 
-img {
+.character img {
   height: fit-content;
 }
