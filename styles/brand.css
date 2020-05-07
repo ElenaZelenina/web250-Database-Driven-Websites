@@ -164,3 +164,13 @@ aside ul {
 .character img {
   height: fit-content;
 }
+
+/* #everything_form div *:nth-child(1){
+  display: inline-block;
+  width: 25%;
+}
+
+#everything_form div *:nth-child(2){
+  display: inline-block;
+  width: 50%;
+} */
