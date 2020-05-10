@@ -101,7 +101,7 @@
             </select>
         </div>
         <div>
-            <legend>You can add a comment here</legend>
+            <label>You can add a comment here</label>
             <textarea cols="60" rows="5" id="comments" name="comments"></textarea>
         </div>
         <button type="submit">Submit the form</button>
