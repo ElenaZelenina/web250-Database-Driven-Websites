@@ -165,12 +165,7 @@ aside ul {
   height: fit-content;
 }
 
-/* #everything_form div *:nth-child(1){
-  display: inline-block;
-  width: 25%;
+table.form-results th, table.form-results td {
+  padding: 5px 8px;
+  border: 1px solid #93D2E4;
 }
-
-#everything_form div *:nth-child(2){
-  display: inline-block;
-  width: 50%;
-} */
