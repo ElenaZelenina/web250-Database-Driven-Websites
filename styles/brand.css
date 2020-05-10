@@ -165,7 +165,17 @@ aside ul {
   height: fit-content;
 }
 
-table.form-results th, table.form-results td {
-  padding: 5px 8px;
-  border: 1px solid #93D2E4;
+#crud-container table {
+  width: 800px;
+  border-collapse: collapse;
+}
+
+#crud-container table td, #crud-container table th {
+  border: 1px solid #EEE;
+  padding: 3px 8px;
+}
+
+#crud-container label {
+  width: 140px;
+  display: inline-block;
 }

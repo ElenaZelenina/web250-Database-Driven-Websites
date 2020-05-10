@@ -1,26 +1,22 @@
 <h1>Everything Form!</h1>
 
 <h2>Please let us know more about you</h2>
-<form action="toc.php?p=form-result.php" method="POST">
+<form action="#" method="POST" id="everything_form">
     <fieldset>
-        <legend>Who you are.</legend>
-        <h5>POST form, regular textboxes</h5>
+        <legend>Who you are</legend>
         <div>
             <label for="fname">First name</label>
             <input type="text" id="fname" name="fname" placeholder="your first name" value="Zøg" />
         </div>
         <div>
             <label for="lname">Last name</label>
-            <input type="text" id="lname" name="lname" placeholder="your last name" value="Grunkwitz" />
+            <input type="text" id="lname" name="lname" placeholder="your last name" value="Grunkwitz"/>
         </div>
-        <button type="submit">Submit the form</button>
     </fieldset>
-</form>
 
-<form action="toc.php?p=form-result.php" method="POST">
     <fieldset>
         <legend>Pick your favorite food</legend>
-        <h5>POST form, checkboxes array</h5>
+
         <div>
             <input type="checkbox" id="steak" name="food[]" value="Snake Root" />
             <label for="steak">Snake Root</label>
@@ -35,15 +31,11 @@
             <input type="checkbox" id="nectar" name="food[]" value="Nectar" />
             <label for="nectar">Nectar</label>
         </div>
-        <button type="submit">Submit the form</button>
     </fieldset>
-</form>
 
-<form action="toc.php" method="GET">
-    <input type="hidden" name="p" value="form-result.php" />
     <fieldset>
         <legend>Pick one favorite drink</legend>
-        <h5>GET form, radiobuttons group</h5>
+
         <div>
             <input type="radio" name="drink" id="lemonade" value="Beer" />
             <label for="lemonade">Beer</label>
@@ -56,36 +48,11 @@
             <input type="radio" name="drink" id="beer" value="Grog" />
             <label for="beer">Grog</label>
         </div>
-        <button type="submit">Submit the form</button>
     </fieldset>
-</form>
 
-<form action="toc.php" method="GET">
-    <input type="hidden" name="p" value="form-result.php" />
-    <fieldset>
-        <legend>Tell about your pet</legend>
-        <h5>GET form. Textbox and select</h5>
-        <div>
-            <label for="petname">Pet name</label>
-            <input type="text" id="petname" name="petname" placeholder="your pet name" value="Nibbler" />
-        </div>
-        <div>
-            <label for="pettype">Pet type</label>
-            <select id="pettype" name="pettype">
-                <option value="animal">Animal</option>
-                <option value="bird">Bird</option>
-                <option value="insect">Insect</option>
-                <option value="alien">Alien creature</option>
-            </select>
-        </div>
-        <button type="submit">Submit the form</button>
-    </fieldset>
-</form>
-
-<form action="toc.php?p=form-result.php" method="POST">
     <fieldset>
         <legend>The tricky question</legend>
-        <h5>POST form, textarea and select with opt grops combined.</h5>
+
         <div>
             <label for="tricky_question">Do you like tricky questions?</label>
 
@@ -100,11 +67,34 @@
                 </optgroup>
             </select>
         </div>
-        <div>
-            <label>You can add a comment here</label>
-            <textarea cols="60" rows="5" id="comments" name="comments"></textarea>
-        </div>
-        <button type="submit">Submit the form</button>
     </fieldset>
-</form>
 
+    <fieldset>
+        <legend>You can add a comment here</legend>
+        <textarea cols="60" rows="5" id="comments" name="comments"></textarea>
+    </fieldset>
+
+
+    <button type="submit">Submit the form</button>
+    <?php if(count($_POST) > 0) {
+        echo "<h3>Here's what you've submitted!</h3>";
+        echo "<dl>";
+        foreach($_POST as $key => $value) {
+            echo "<dt>$key</dt>";
+            if($key == "food" && count($value) > 1) {
+                echo "<dd><ul>";
+                foreach($value as $food_name) {
+                    echo "<li>$food_name</li>";
+                }
+                echo "</ul></dd>";
+            } else {
+                echo "<dd>$value</dd>";
+            }
+        }
+        echo "</dl>";
+    }
+    ?>
+
+    <?php if(count($_POST) == 0) { ?>
+    <?php }?>
+</form>
